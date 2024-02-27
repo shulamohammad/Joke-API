@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokes App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <img src="girl-laugh.jpeg" alt="laughing girl"> 
+        <div class="delivery">
+            <form action="/" id="form" class="form" method="POST">
+                <select name="category" class="form-select">
+                    <option value="Any">Any</option>
+                    <option value="Misc">Misc</option>
+                    <option value="Programming">Programming</option>
+                    <option value="Dark">Dark</option>
+                    <option value="Pun">Pun</option>
+                    <option value="Spooky">Spooky</option>
+                    <option value="Christmas">Christmas</option>
+                </select>
+                <button type="submit" class="form-submit">Go</button>
+            </form>
+            <% if (locals.data) { %>
+                <h2>Joke:</h2>
+                <% if (data.type === 'twopart') { %>
+                    <p><%= data.setup %></p>
+                    <p><%= data.delivery %></p>
+                <% } else if (data.type === 'single') { %>
+                    <p><%= data.joke %></p>
+                <% } else { %>
+                    <p>Unknown joke type</p>
+                <% } %>
+        <% } %>
+            
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Joke Generater | Created by Shula</p>
+    </footer>
+</body>
+</html>
+
